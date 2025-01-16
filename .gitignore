@@ -1,7 +1,8 @@
-.git/
-.vs/
-Backup/
-Library/
-Logs/
-obj/
-UserSettings/
+/.git
+/.vs
+/Backup
+/Library
+/Logs
+/obj
+/UserSettings
+/Library
