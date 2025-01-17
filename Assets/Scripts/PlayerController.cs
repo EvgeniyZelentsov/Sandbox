@@ -30,13 +30,13 @@ public class PlayerController : MonoBehaviour
         //тоже что и Normilize()
         //var movement = Vector3.ClampMagnitude(new Vector3(horizontalInput, 0, verticalInput), 1);
         var movementDirection = new Vector3(horizontalInput, 0f, verticalInput);
-
-
+        movementDirection.Normalize();
+        movementDirection = movementDirection * speed * Time.deltaTime;
         //movementDirection = Vector3.ClampMagnitude(movementDirection, speed);
 
-        RotatePlayer(new Vector3(horizontalInput, 0, verticalInput));
+        RotatePlayer(movementDirection);
         MovePlayer(movementDirection);
-        //MoveMainCamera(movementDirection);
+        MoveMainCamera(movementDirection);
 
 
 
@@ -53,8 +53,8 @@ public class PlayerController : MonoBehaviour
     {
 
         //characterController.Move(transform.TransformDirection(movementDirection * speed * Time.deltaTime));
-        movementDirection.Normalize();
-        characterController.Move(movementDirection * speed * Time.deltaTime);
+
+        characterController.Move(movementDirection);
         //transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
 
@@ -66,10 +66,9 @@ public class PlayerController : MonoBehaviour
         //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
-    private void MoveMainCamera(Vector3 movement)
+    private void MoveMainCamera(Vector3 movementDirection)
     {
-        //movement = Vector3.ClampMagnitude(movement, speed);
-
-        mainCamera.transform.Translate(transform.TransformDirection(movement), Space.World);
+        mainCamera.transform.Translate(movementDirection, Space.World);
+        //mainCamera.transform.Translate(transform.TransformDirection(movement), Space.World);
     }
 }
