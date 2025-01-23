@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
 
-    private void RotatePlayer(Vector3 movementDirection)
+          private void RotatePlayer(Vector3 movementDirection)
     {
         if (movementDirection == Vector3.zero) return;
 
