@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         //movementDirection.Normalize();
         //154.2669
         //45.5799
-               Debug.Log($"new X: {characterController.transform.position.x}");
+          Debug.Log($"new X: {characterController.transform.position.x}");
         if (characterController.transform.position.z > 154f || characterController.transform.position.z < 45.58f)
         {
             movementDirection.z = 0f;
