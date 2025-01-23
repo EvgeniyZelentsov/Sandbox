@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         var horizontalInput = Input.GetAxis("Horizontal");
         var verticalInput = Input.GetAxis("Vertical");
 
-        //тоже что и Normilize()
+        //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ Normilize()
         //var movement = Vector3.ClampMagnitude(new Vector3(horizontalInput, 0, verticalInput), 1);
         var movementDirection = new Vector3(horizontalInput, 0f, verticalInput);
 
@@ -66,9 +66,24 @@ public class PlayerController : MonoBehaviour
     }
     private void MoveMainCamera(Vector3 movementDirection)
     {
-        Debug.Log($"Z: {characterController.transform.position.z}");
-        if (characterController.transform.position.z > 154f || characterController.transform.position.z < 45.58f) return;
+        //var z = Mathf.Clamp(characterController.transform.position.z, 45.58f, 154f);
+        //movementDirection.z = z;
+        //movementDirection.Normalize();
+        //154.2669
+        //45.5799
+               Debug.Log($"new X: {characterController.transform.position.x}");
+        if (characterController.transform.position.z > 154f || characterController.transform.position.z < 45.58f)
+        {
+            movementDirection.z = 0f;
+        }
+
+        if (characterController.transform.position.x > 154f || characterController.transform.position.x < 45.58f)
+        {
+            movementDirection.x = 0f;
+        }
+
         mainCamera.transform.Translate(movementDirection, Space.World);
+
         //mainCamera.transform.Translate(transform.TransformDirection(movement), Space.World);
     }
 }
