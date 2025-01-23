@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour
 
     private void MoveMainCamera(Vector3 movementDirection)
     {
-         var x = 123;
         //var z = Mathf.Clamp(characterController.transform.position.z, 45.58f, 154f);
         //movementDirection.z = z;
         //movementDirection.Normalize();
