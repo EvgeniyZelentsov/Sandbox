@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
 
-          private void RotatePlayer(Vector3 movementDirection)
+    private void RotatePlayer(Vector3 movementDirection)
     {
         if (movementDirection == Vector3.zero) return;
 
@@ -64,14 +64,16 @@ public class PlayerController : MonoBehaviour
         //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
+
     private void MoveMainCamera(Vector3 movementDirection)
     {
+         var x = 123;
         //var z = Mathf.Clamp(characterController.transform.position.z, 45.58f, 154f);
         //movementDirection.z = z;
         //movementDirection.Normalize();
         //154.2669
         //45.5799
-          Debug.Log($"new X: {characterController.transform.position.x}");
+        Debug.Log($"new X: {characterController.transform.position.x}");
         if (characterController.transform.position.z > 154f || characterController.transform.position.z < 45.58f)
         {
             movementDirection.z = 0f;
