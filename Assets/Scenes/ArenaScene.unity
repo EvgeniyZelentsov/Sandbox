@@ -939,7 +939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   mainCamera: {fileID: 175631170}
-  mainCameraOffset: 30
+  mainCameraCharacterOffset: 30
   rotationSpeed: 5000
 --- !u!143 &1274693029
 CharacterController:
