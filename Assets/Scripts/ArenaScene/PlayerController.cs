@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer(Vector3 movementDirection)
     {
 
-        //characterController.Move(transform.TransformDirection(movementDirection * speed * Time.deltaTime));        
+        //characterController.Move(transform.TransformDirection(movementDirection * speed * Time.deltaTime));
         characterController.Move(movementDirection);
         //transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
